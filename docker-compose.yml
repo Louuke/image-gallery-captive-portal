@@ -9,6 +9,7 @@ services:
       GALLERY_DIRECTORY: "/images"
       GALLERY_HEADER: "my images"
       GALLERY_IMAGE_DATE_FORMAT: "%m/%d/%Y %I:%M %p"
+    restart: unless-stopped
   nginx:
     image: nginx:alpine
     container_name: nginx
@@ -16,6 +17,7 @@ services:
       - "192.168.137.1:80:80/tcp"
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
   dnschef:
     image: ghcr.io/louuke/dnschef-ng:latest
     container_name: dnschef-ng
@@ -31,3 +33,4 @@ services:
       - TCP=false
       - IPV6=false
       - CONFIGFILE=/etc/dnschef.toml
+    restart: unless-stopped
