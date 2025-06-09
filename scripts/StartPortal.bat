@@ -1,6 +1,6 @@
 @echo off
 
-docker compose -f ../docker-compose.yml up -d --pull=never
+docker compose -f ../docker-compose.yml -f ../docker-compose-override.yml up -d --pull=never
 
 timeout /t 10 /nobreak > NUL
 
