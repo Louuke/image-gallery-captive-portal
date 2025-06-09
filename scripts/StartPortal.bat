@@ -1,6 +1,6 @@
 @echo off
 
-docker compose -f ../docker-compose.yml up -d
+docker compose -f ../docker-compose.yml up -d --pull=never
 
 timeout /t 10 /nobreak > NUL
 
