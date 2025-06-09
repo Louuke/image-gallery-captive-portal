@@ -2,10 +2,10 @@
 
 REM Check if docker-compose-override file exists
 if not exist "../docker-compose-override.yml" (
-    echo "docker-compose-override.yml not found, using default configuration."
+    echo docker-compose-override.yml not found, using default configuration.
     docker compose -f ../docker-compose.yml up -d --pull=never
 ) else (
-    echo "docker-compose-override.yml found, using custom configuration."
+    echo docker-compose-override.yml found, using custom configuration.
     docker compose -f ../docker-compose.yml -f ../docker-compose-override.yml up -d --pull=never
 )
 
